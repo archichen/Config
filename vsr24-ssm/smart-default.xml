@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?> 
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<!-- Do not modify this file directly.  Instead, copy entries that you -->
+<!-- wish to modify from this file into ssm-site.xml and change them -->
+<!-- there.  If ssm-site.xml does not already exist, create it.      -->
+
+<configuration>
+  <property>
+    <name>smart.dfs.enabled</name>
+    <value>true</value>
+    <description>
+      For SSM, all functions disabled except rpc and RESTApi service if false.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.ignore.dirs</name>
+    <value></value>
+    <description>
+      SSM will completely ignore files under the given directories.
+      Directories are separated by ','.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.server.rpc.address</name>
+    <value>0.0.0.0:7042</value>
+    <description>rpc server of SSM</description>
+  </property>
+
+  <property>
+    <name>smart.server.rpc.handler.count</name>
+    <value>80</value>
+    <description>number of handlers in rpc server</description>
+  </property>
+
+  <property>
+    <name>smart.server.http.address</name>
+    <value>0.0.0.0:7045</value>
+    <description>REST server of SSM</description>
+  </property>
+
+  <property>
+    <name>smart.agent.port</name>
+    <value>7048</value>
+    <description>SmartAgent port</description>
+  </property>
+
+  <property>
+    <name>smart.agent.master.port</name>
+    <value>7051</value>
+    <description>SmartAgent master port</description>
+  </property>
+
+  <property>
+    <name>smart.namespace.fetcher.batch</name>
+    <value>500</value>
+    <description>Batch size of Namespace fetcher</description>
+  </property>
+
+  <property>
+    <name>smart.namespace.fetcher.producers.num</name>
+    <value>3</value>
+    <description>Number of producers in namespace fetcher</description>
+  </property>
+
+  <property>
+    <name>smart.namespace.fetcher.consumers.num</name>
+    <value>6</value>
+    <description>Number of consumers in namespace fetcher</description>
+  </property>
+
+  <property>
+    <name>smart.rule.executors</name>
+    <value>5</value>
+    <description>Max number of rules that can be executed in parallel</description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.executors</name>
+    <value>10</value>
+    <description>Max number of cmdlets that can be executed in parallel</description>
+  </property>
+
+  <property>
+    <name>smart.dispatch.cmdlets.extra.num</name>
+    <value>10</value>
+    <description>The number of extra cmdlets dispatched by Smart Server</description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.dispatchers</name>
+    <value>3</value>
+    <description>Max number of cmdlet dispatchers that work in parallel</description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.mover.max.concurrent.blocks.per.srv.inst</name>
+    <value>0</value>
+    <description>
+      Max number of file mover cmdlets that can be executed in parallel per SSM service.
+      0 means unlimited.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.action.move.throttle.mb</name>
+    <value>0</value>
+    <description>The throughput limit (MB) for SSM move overall</description>
+  </property>
+
+  <property>
+    <name>smart.action.copy.throttle.mb</name>
+    <value>0</value>
+    <description>The throughput limit (MB) for SSM copy overall</description>
+  </property>
+
+  <property>
+    <name>smart.action.local.execution.disabled</name>
+    <value>false</value>
+    <description>Actions will not be executed on SSM server if true.</description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.max.num.pending</name>
+    <value>20000</value>
+    <description>
+      Maximum number of pending cmdlets in SSM server.
+      Default value is 20000.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.hist.max.num.records</name>
+    <value>100000</value>
+    <description>
+      Maximum number of historic cmdlet records kept in SSM server.
+      Oldest cmdlets will be deleted if exceeds the threshold.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.hist.max.record.lifetime</name>
+    <value>30day</value>
+    <description>
+      Maximum life time of historic cmdlet records kept in SSM server.
+      Cmdlet record will be deleted from SSM server if exceeds the threshold.
+      Valid time unit can be 'day', 'hour', 'min', 'sec'. The minimum update
+      granularity is 5sec.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.cache.batch</name>
+    <value>600</value>
+    <description>
+      Maximum batch size of cmdlet batch insert.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.copy.scheduler.base.sync.batch</name>
+    <value>500</value>
+    <description>
+      Maximum batch size of copyscheduler base sync batch insert.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.file.diff.max.num.records</name>
+    <value>10000</value>
+    <description>
+      Maximum file diff records with useless state.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.status.report.period</name>
+    <value>10</value>
+    <description>
+      The status report period for actions. The time unit is millisecond.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.status.report.period.multiplier</name>
+    <value>50</value>
+    <description>
+      The report period multiplied by this multiplier defines largest report interval.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.status.report.ratio</name>
+    <value>0.2</value>
+    <description>
+      If the finished actions ratio equals or exceeds this value, status report will be triggered.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.top.hot.files.num</name>
+    <value>200</value>
+    <description>
+      The number of top hot files displayed on web UI.
+    </description>
+  </property>
+
+  <property>
+    <name>pd.client.port</name>
+    <value>7060</value>
+    <description>Pd port in client-url option</description>
+  </property>
+
+  <property>
+    <name>pd.peer.port</name>
+    <value>7061</value>
+    <description>Pd port in peer-url option</description>
+  </property>
+
+  <property>
+    <name>tikv.service.port</name>
+    <value>20160</value>
+    <description>Tikv port in addr option</description>
+  </property>
+
+  <property>
+    <name>tidb.service.port</name>
+    <value>7070</value>
+    <description>SmartAgent master port</description>
+  </property>
+
+  <property>
+    <name>smart.namespace.fetcher.ignore.unsuccessive.inotify.event</name>
+    <value>false</value>
+    <description>
+      Skip fetch the entire namespace and only use available iNotify events to update namespace if true.
+      NOTE: This may leads to some unpredictable consequences and should only be used for testing.
+    </description>
+  </property>
+
+  <property>
+    <name>smart.cmdlet.dispatcher.log.disp.result</name>
+    <value>true</value>
+    <description>
+      Log dispatch result for each cmdlet been dispatched.
+    </description>
+  </property>
+  <property>
+    <name>smart.compression.max.split</name>
+    <value>300</value>
+    <description>
+      Log dispatch result for each cmdlet been dispatched.
+    </description>
+  </property>
+
+
+</configuration>
